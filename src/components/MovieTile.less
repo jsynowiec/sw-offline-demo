@@ -1,0 +1,44 @@
+.movie-tile {
+  display: flex;
+  flex-direction: row;
+  height: 128px;
+  margin-bottom: 12px;
+
+  &--image {
+    width: 85px;
+    margin-right: 4px;
+  }
+
+  &--content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 4px;
+
+    &--title {
+      font-weight: 500;
+
+      padding: 4px 4px 0 4px;
+    }
+
+    &--subtitle {
+      font-weight: 400;
+      font-size: 0.8em;
+
+      padding: 4px 4px 0 4px;
+    }
+
+    &--overview {
+      font-size: 0.8em;
+      line-height: 1.2em;
+
+      padding: 4px 4px 0 4px;
+
+      margin-top: 4px;
+      margin-bottom: 14px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
