@@ -1,0 +1,14 @@
+{
+  "name": "sw-offline-demo",
+  "version": "0.1.0",
+  "description": "Offline fallback with Service Worker",
+  "engines": {
+    "node": ">=6.2.0"
+  },
+  "scripts": {},
+  "author": "Jakub Synowiec",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
