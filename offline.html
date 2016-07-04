@@ -6,8 +6,25 @@
   <title>Sorry, offline :-(</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    p {
+      font-size: 1.2em;
+    }
+    em.joke {
+      font-size: 1.6em;
+    }
+  </style>
 </head>
 <body>
-  <div id="main"></div>
+  <p>Sorry, but there is a problem with your network connection.</p>
+  <p>You can read this Chuck Norris fact, while you wait (remeber to hit refresh):</p>
+  <script>
+    fetch('/chuck-norris.json')
+    .then(response => response.json())
+    .then(jokes => {
+      const randomJoke = jokes[Math.floor(Math.random() * (jokes.length + 1)) + 0]; 
+      document.body.innerHTML += `<em class="joke">"${randomJoke.joke}"</em>`;
+    });
+  </script>
 </body>
 </html>
