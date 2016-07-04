@@ -3,6 +3,8 @@
 require('./app.less');
 require('file?name=[name].[ext]!../index.html');
 require('file?name=[name].[ext]!../offline.html');
+require('file?name=[name].[ext]!../chuck-norris.json');
+require('file?name=[name].[ext]!../sw.js');
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -25,3 +27,9 @@ render(
   <App />,
   document.getElementById('main')
 );
+
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js', {
+    scope: '/',
+  });
+}
