@@ -1,44 +1,48 @@
+@padding-size: 4px;
+@element-padding: @padding-size @padding-size 0 @padding-size;
+
 .movie-tile {
+  flex: 1 100%;
+
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;;
+
   height: 128px;
   margin-bottom: 12px;
 
   &--image {
     width: 85px;
-    margin-right: 4px;
+    margin-right: @padding-size;
   }
 
   &--content {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
 
-    padding: 4px;
+    padding: @padding-size;
 
     &--title {
       font-weight: 500;
 
-      padding: 4px 4px 0 4px;
+      padding: @element-padding;
     }
 
     &--subtitle {
       font-weight: 400;
       font-size: 0.8em;
 
-      padding: 4px 4px 0 4px;
+      padding: @element-padding;
     }
 
     &--overview {
       font-size: 0.8em;
       line-height: 1.2em;
 
-      padding: 4px 4px 0 4px;
+      padding: @element-padding;
 
-      margin-top: 4px;
       margin-bottom: 14px;
 
       overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
 }
