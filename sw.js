@@ -15,6 +15,8 @@ self.addEventListener('install', (event) => {
   );
 });
 
+// once a new Service Worker has installed & a previous version isn't
+// being used, the new one activates so we can clean-up & migrate
 self.addEventListener('activate', (event) => {
   // remove caches beginning "movies-" that aren't in
   // expectedCaches
@@ -36,12 +38,12 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    // Try the cache
+    // try the cache
     caches.match(event.request).then((cachedResponse) =>
-      // Fall back to network
+      // fall back to network
       cachedResponse || fetch(event.request)
     ).catch(() =>
-      // If both fail, show a generic fallback:
+      // if both fail, show a generic fallback:
       caches.match('/offline.html')
     )
   );
